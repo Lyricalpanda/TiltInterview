@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Eric Harmon. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SearchViewController.h"
 
 #import "TiltNetworkManager.h"
 #import "ImageResult.h"
 
 #import "ImageCollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "UIImageView+ImageSize.h"
 
 #define BLUR_VIEW_TAG 1
 #define CLOSE_BUTTON_TAG 2
@@ -23,7 +22,7 @@
 #define GREYVIEW_TAG 6
 #define SAVE_BUTTON_TAG 7
 
-@interface ViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate>
+@interface SearchViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic) int cellWidth;
 @property (nonatomic) int cellHeight;
@@ -46,7 +45,7 @@
 
 @end
 
-@implementation ViewController
+@implementation SearchViewController
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -95,7 +94,7 @@
         }
         NSDictionary *nextPageDict = [[[(NSDictionary *)responseObject objectForKey:@"queries"] objectForKey:@"nextPage"] objectAtIndex:0];
         
-        self.paginationIndex = [[nextPageDict objectForKey:@"startIndex"] integerValue];
+        self.paginationIndex = (int)[[nextPageDict objectForKey:@"startIndex"] integerValue];
         [self.collectionView reloadData];
         
     } andFailureBlock:^(NSURLSessionDataTask *task, NSError *error) {
@@ -175,8 +174,11 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     
-    
     [UIImagePNGRepresentation(imgView.image) writeToFile:filePath atomically:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Saved Image!" message:@"Image has been saved - click on the Saved tab in the tab bar to see your saved images!" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+    
+    [alert show];
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -256,7 +258,7 @@
         self.cellHeight = 140;
         self.cellWidth = 140;
     }
-    NSLog(NSStringFromCGRect(self.view.frame));
+
     [self.collectionView setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
     self.isSearching = NO;
@@ -282,7 +284,6 @@
     ImageCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
     ImageResult *img = [self.imageResults objectAtIndex:indexPath.row];
     [cell.imageView setImageWithURL:[NSURL URLWithString:img.thumbnailLink]];
-    [cell setBackgroundColor:[UIColor orangeColor]];
      return cell;
 }
 

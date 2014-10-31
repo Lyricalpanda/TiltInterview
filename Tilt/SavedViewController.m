@@ -32,12 +32,12 @@
 {
     [super viewWillAppear:animated];
     [self.imagesArray removeAllObjects];
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSArray *paths2 = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[path objectAtIndex:0] error:NULL];
-    [paths2 enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    NSArray *filePath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *documentsDirectory = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[filePath objectAtIndex:0] error:NULL];
+    [documentsDirectory enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filename = (NSString *)obj;
         if (![filename isEqualToString:@".DS_Store"])
-            [self.imagesArray addObject:[[path objectAtIndex:0] stringByAppendingPathComponent:filename]];
+            [self.imagesArray addObject:[[filePath objectAtIndex:0] stringByAppendingPathComponent:filename]];
     }];
     
     [self.collectionView reloadData];
@@ -47,6 +47,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - CollectionView delegate methods
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     
@@ -60,39 +62,13 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
     [cell.imageView setImage:[UIImage imageWithContentsOfFile:[self.imagesArray objectAtIndex:indexPath.row]]];
+    [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
     return cell;
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
-    {
-        // Portrait is the same in either orientation
-        return UIEdgeInsetsMake(0, 70, 0, 70);
-    }
-    else
-    {
-        // We need to get the height of the main screen to see if we're running
-        // on a 4" screen. If so, we need extra side padding.
-        if (CGRectGetHeight([[UIScreen mainScreen] bounds]) > 480)
-        {
-            return UIEdgeInsetsMake(0, 190, 0, 190);
-        }
-        else
-        {
-            return UIEdgeInsetsMake(0, 150, 0, 150);
-        }
-    }
+    return UIEdgeInsetsMake(0, 70, 0, 70);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F30887231A03E549009FE317 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = F30887201A03E549009FE317 /* arrow-left.png */; };
-		F30887241A03E549009FE317 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = F30887211A03E549009FE317 /* arrow-right.png */; };
-		F30887251A03E549009FE317 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F30887221A03E549009FE317 /* close.png */; };
-		F308872B1A03F3A3009FE317 /* UIImageView+ImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F308872A1A03F3A3009FE317 /* UIImageView+ImageSize.m */; };
-		F35E27BD1A0295BF00A0F3E4 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = F35E27BC1A0295BF00A0F3E4 /* loading.png */; };
-		F35E27BF1A02C3E600A0F3E4 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F35E27BE1A02C3E600A0F3E4 /* search.png */; };
-		F35E27C11A02C40000A0F3E4 /* arrow-up2.png in Resources */ = {isa = PBXBuildFile; fileRef = F35E27C01A02C40000A0F3E4 /* arrow-up2.png */; };
-		F35E27C31A02C45B00A0F3E4 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = F35E27C21A02C45B00A0F3E4 /* star.png */; };
 		F35E27C61A02F01900A0F3E4 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E27C51A02F01900A0F3E4 /* TrendingViewController.m */; };
 		F35E27C91A035B9C00A0F3E4 /* SavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E27C81A035B9C00A0F3E4 /* SavedViewController.m */; };
 		F35E27CD1A0362BA00A0F3E4 /* AFCoverFlowFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F35E27CC1A0362BA00A0F3E4 /* AFCoverFlowFlowLayout.m */; };
@@ -22,7 +14,7 @@
 		F3B2FC3B19FD72860093810B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B2FC3A19FD72860093810B /* main.m */; };
 		F3B2FC3E19FD72860093810B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B2FC3D19FD72860093810B /* AppDelegate.m */; };
 		F3B2FC4119FD72860093810B /* Tilt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3B2FC3F19FD72860093810B /* Tilt.xcdatamodeld */; };
-		F3B2FC4419FD72860093810B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B2FC4319FD72860093810B /* ViewController.m */; };
+		F3B2FC4419FD72860093810B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B2FC4319FD72860093810B /* SearchViewController.m */; };
 		F3B2FC4719FD72860093810B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B2FC4519FD72860093810B /* Main.storyboard */; };
 		F3B2FC4919FD72860093810B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B2FC4819FD72860093810B /* Images.xcassets */; };
 		F3B2FC4C19FD72860093810B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B2FC4A19FD72860093810B /* LaunchScreen.xib */; };
@@ -60,15 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F30887201A03E549009FE317 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
-		F30887211A03E549009FE317 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
-		F30887221A03E549009FE317 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		F30887291A03F3A3009FE317 /* UIImageView+ImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ImageSize.h"; sourceTree = "<group>"; };
-		F308872A1A03F3A3009FE317 /* UIImageView+ImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ImageSize.m"; sourceTree = "<group>"; };
-		F35E27BC1A0295BF00A0F3E4 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
-		F35E27BE1A02C3E600A0F3E4 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		F35E27C01A02C40000A0F3E4 /* arrow-up2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up2.png"; sourceTree = "<group>"; };
-		F35E27C21A02C45B00A0F3E4 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		F35E27C41A02F01900A0F3E4 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
 		F35E27C51A02F01900A0F3E4 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
 		F35E27C71A035B9C00A0F3E4 /* SavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedViewController.h; sourceTree = "<group>"; };
@@ -83,8 +66,8 @@
 		F3B2FC3C19FD72860093810B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3B2FC3D19FD72860093810B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F3B2FC4019FD72860093810B /* Tilt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tilt.xcdatamodel; sourceTree = "<group>"; };
-		F3B2FC4219FD72860093810B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F3B2FC4319FD72860093810B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F3B2FC4219FD72860093810B /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F3B2FC4319FD72860093810B /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F3B2FC4619FD72860093810B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3B2FC4819FD72860093810B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F3B2FC4B19FD72860093810B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -153,6 +136,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F308872C1A041702009FE317 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2FC9B19FE9F1C0093810B /* ImageResult.h */,
+				F3B2FC9C19FE9F1C0093810B /* ImageResult.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F308872D1A04170B009FE317 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2FD0E1A013ED30093810B /* ImageCollectionViewCell.h */,
+				F3B2FD0F1A013ED30093810B /* ImageCollectionViewCell.m */,
+				F35E27C71A035B9C00A0F3E4 /* SavedViewController.h */,
+				F35E27C81A035B9C00A0F3E4 /* SavedViewController.m */,
+				F3B2FC4219FD72860093810B /* SearchViewController.h */,
+				F3B2FC4319FD72860093810B /* SearchViewController.m */,
+				F35E27C41A02F01900A0F3E4 /* TrendingViewController.h */,
+				F35E27C51A02F01900A0F3E4 /* TrendingViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F308872E1A043070009FE317 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2FC9819FE8FA30093810B /* TiltNetworkManager.h */,
+				F3B2FC9919FE8FA30093810B /* TiltNetworkManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		F35E27CA1A0362A100A0F3E4 /* CoverFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,31 +203,13 @@
 		F3B2FC3719FD72860093810B /* Tilt */ = {
 			isa = PBXGroup;
 			children = (
+				F308872E1A043070009FE317 /* Networking */,
+				F308872D1A04170B009FE317 /* Views */,
+				F308872C1A041702009FE317 /* Models */,
 				F35E27CA1A0362A100A0F3E4 /* CoverFlow */,
 				F3B2FC3C19FD72860093810B /* AppDelegate.h */,
 				F3B2FC3D19FD72860093810B /* AppDelegate.m */,
-				F3B2FC9819FE8FA30093810B /* TiltNetworkManager.h */,
-				F3B2FC9919FE8FA30093810B /* TiltNetworkManager.m */,
-				F35E27C41A02F01900A0F3E4 /* TrendingViewController.h */,
-				F35E27C51A02F01900A0F3E4 /* TrendingViewController.m */,
-				F3B2FC9B19FE9F1C0093810B /* ImageResult.h */,
-				F3B2FC9C19FE9F1C0093810B /* ImageResult.m */,
-				F3B2FC4219FD72860093810B /* ViewController.h */,
-				F3B2FC4319FD72860093810B /* ViewController.m */,
-				F35E27C71A035B9C00A0F3E4 /* SavedViewController.h */,
-				F35E27C81A035B9C00A0F3E4 /* SavedViewController.m */,
-				F35E27BC1A0295BF00A0F3E4 /* loading.png */,
-				F30887201A03E549009FE317 /* arrow-left.png */,
-				F30887211A03E549009FE317 /* arrow-right.png */,
-				F30887221A03E549009FE317 /* close.png */,
-				F35E27BE1A02C3E600A0F3E4 /* search.png */,
 				F3B2FC4519FD72860093810B /* Main.storyboard */,
-				F35E27C21A02C45B00A0F3E4 /* star.png */,
-				F35E27C01A02C40000A0F3E4 /* arrow-up2.png */,
-				F30887291A03F3A3009FE317 /* UIImageView+ImageSize.h */,
-				F308872A1A03F3A3009FE317 /* UIImageView+ImageSize.m */,
-				F3B2FD0E1A013ED30093810B /* ImageCollectionViewCell.h */,
-				F3B2FD0F1A013ED30093810B /* ImageCollectionViewCell.m */,
 				F3B2FC4819FD72860093810B /* Images.xcassets */,
 				F3B2FC4A19FD72860093810B /* LaunchScreen.xib */,
 				F3B2FC3F19FD72860093810B /* Tilt.xcdatamodeld */,
@@ -377,15 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B2FC4719FD72860093810B /* Main.storyboard in Resources */,
-				F35E27C31A02C45B00A0F3E4 /* star.png in Resources */,
-				F35E27BF1A02C3E600A0F3E4 /* search.png in Resources */,
 				F3B2FC4C19FD72860093810B /* LaunchScreen.xib in Resources */,
-				F30887231A03E549009FE317 /* arrow-left.png in Resources */,
-				F35E27BD1A0295BF00A0F3E4 /* loading.png in Resources */,
 				F3B2FC4919FD72860093810B /* Images.xcassets in Resources */,
-				F35E27C11A02C40000A0F3E4 /* arrow-up2.png in Resources */,
-				F30887251A03E549009FE317 /* close.png in Resources */,
-				F30887241A03E549009FE317 /* arrow-right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,9 +408,8 @@
 				F3B2FC9419FE8F800093810B /* UIImageView+AFNetworking.m in Sources */,
 				F3B2FC8719FE8F800093810B /* AFHTTPRequestOperation.m in Sources */,
 				F3B2FC9119FE8F800093810B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				F308872B1A03F3A3009FE317 /* UIImageView+ImageSize.m in Sources */,
 				F35E27CD1A0362BA00A0F3E4 /* AFCoverFlowFlowLayout.m in Sources */,
-				F3B2FC4419FD72860093810B /* ViewController.m in Sources */,
+				F3B2FC4419FD72860093810B /* SearchViewController.m in Sources */,
 				F3B2FC8D19FE8F800093810B /* AFURLRequestSerialization.m in Sources */,
 				F3B2FC9D19FE9F1C0093810B /* ImageResult.m in Sources */,
 				F35E27C61A02F01900A0F3E4 /* TrendingViewController.m in Sources */,

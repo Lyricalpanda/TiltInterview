@@ -8,7 +8,7 @@
         <!--Search-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Search" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Search" id="vXZ-lx-hvc" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -171,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fJB-9s-gQr">
-                                <rect key="frame" x="0.0" y="336" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="353" width="600" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q3B-xJ-udZ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -214,6 +214,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Ma9-4X-bdY"/>
+                                    <constraint firstAttribute="height" constant="120" id="xKZ-SX-EQE"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w1R-W7-U55">
                                     <size key="itemSize" width="50" height="50"/>
@@ -246,6 +247,11 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ma9-4X-bdY"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="H3d-vg-RBq" id="YgB-2m-HzC"/>
                                     <outlet property="delegate" destination="H3d-vg-RBq" id="dwV-WE-7PN"/>
@@ -255,6 +261,7 @@
                                 <rect key="frame" x="16" y="137" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5ev-Ug-8h4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qmf-zs-FsB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -262,6 +269,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjT-R1-LXt">
                                 <rect key="frame" x="16" y="307" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rlD-3p-PAi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +291,7 @@
                             <constraint firstItem="ZjT-R1-LXt" firstAttribute="leading" secondItem="x7X-Qp-Ry1" secondAttribute="leadingMargin" id="G48-dB-MIi"/>
                             <constraint firstItem="IUt-my-Wao" firstAttribute="centerX" secondItem="bRd-bk-r0S" secondAttribute="centerX" id="IJe-Ik-Nho"/>
                             <constraint firstItem="2r1-nw-OiK" firstAttribute="top" secondItem="IUt-my-Wao" secondAttribute="bottom" constant="60" id="JdJ-Ki-iSm"/>
-                            <constraint firstItem="fJB-9s-gQr" firstAttribute="top" secondItem="ZjT-R1-LXt" secondAttribute="bottom" constant="8" symbolic="YES" id="Lz9-1I-RBX"/>
+                            <constraint firstItem="fJB-9s-gQr" firstAttribute="top" secondItem="ZjT-R1-LXt" secondAttribute="bottom" constant="25" id="Lz9-1I-RBX"/>
                             <constraint firstItem="ZjT-R1-LXt" firstAttribute="top" secondItem="bRd-bk-r0S" secondAttribute="bottom" constant="16" id="U8g-Cb-EMJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bRd-bk-r0S" secondAttribute="trailing" constant="-16" id="Vcv-20-GSo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fJB-9s-gQr" secondAttribute="trailing" constant="-16" id="YDK-lF-ddi"/>
@@ -294,8 +304,13 @@
                             <constraint firstItem="bRd-bk-r0S" firstAttribute="height" secondItem="fJB-9s-gQr" secondAttribute="height" id="q1p-Kx-6am"/>
                             <constraint firstItem="2r1-nw-OiK" firstAttribute="centerX" secondItem="IUt-my-Wao" secondAttribute="centerX" id="tPK-SB-K2n"/>
                             <constraint firstItem="IUt-my-Wao" firstAttribute="top" secondItem="Tji-Ub-eZs" secondAttribute="bottom" constant="24" id="yTI-NM-6qS"/>
-                            <constraint firstItem="NHt-NA-LaB" firstAttribute="top" secondItem="fJB-9s-gQr" secondAttribute="bottom" constant="95" id="z5e-0l-L0q"/>
+                            <constraint firstItem="NHt-NA-LaB" firstAttribute="top" secondItem="fJB-9s-gQr" secondAttribute="bottom" constant="78" id="z5e-0l-L0q"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="q1p-Kx-6am"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trending" image="arrow-up2.png" id="ooL-PH-ojj"/>
                     <connections>

@@ -15,4 +15,5 @@
 @property (nonatomic, retain) NSString *thumbnailLink;
 @property (nonatomic) int thumbnailHeight;
 @property (nonatomic) int thumbnailWidth;
+
 @end

@@ -65,10 +65,14 @@
 {
     //Initialize FlowLayout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    [layout setItemSize:CGSizeMake(collectionView.frame.size.height - 6, collectionView.frame.size.height - 6)];
+    [layout setItemSize:CGSizeMake(collectionView.frame.size.height - 4, collectionView.frame.size.height - 4)];
     [layout setMinimumLineSpacing:10];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
 
+//    if (collectionView.tag == 1)
+//    {
+//    [collectionView = [UICollectionView alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>) collectionViewLayout:layout];
+//    }
     [collectionView setCollectionViewLayout:layout];
     collectionView.opaque = NO;
     collectionView.backgroundColor = [UIColor clearColor];
@@ -78,8 +82,14 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void) viewDidLayoutSubviews
+{
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self.trendingDict removeAllObjects];
     [self.trendingView1 reloadData];
     [self.trendingView2 reloadData];
@@ -100,7 +110,6 @@
     } andFailureBlock:^(AFHTTPRequestOperation *task, NSError *error) {
         NSLog(@"Error: %@", error.localizedDescription);
     }];
-
 }
 
 - (void) searchGoogleImagesFor:(NSString *)query andCollectionView:(UICollectionView *)collectionView
@@ -140,8 +149,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-
-    return [[self.trendingDict objectForKey:[NSString stringWithFormat:@"%ld", [view tag]]] count];
+    return [[self.trendingDict objectForKey:[NSString stringWithFormat:@"%ld", (long)[view tag]]] count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -150,7 +158,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
-    NSArray *imageArray = [self.trendingDict objectForKey:[NSString stringWithFormat:@"%ld",cv.tag]];
+    NSArray *imageArray = [self.trendingDict objectForKey:[NSString stringWithFormat:@"%ld",(long)cv.tag]];
     ImageResult *img = [imageArray objectAtIndex:indexPath.row];
     [cell.imageView setImageWithURL:[NSURL URLWithString:img.thumbnailLink] placeholderImage:nil];
     [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];

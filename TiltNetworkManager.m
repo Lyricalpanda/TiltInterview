@@ -11,11 +11,12 @@
 #import "AFHTTPRequestOperation.h"
 
 #define baseURL @"https://www.googleapis.com/customsearch/"
-#define API_KEY @"AIzaSyC0aa24NEwY0WaLQP7cMxJtlB_VJmiVtwc"
 #define cx @"016164822929968605127:zafsrcubryc"
-#define API_KEY @"AIzaSyAR12LCQeHzSN8cfDBSrf7gs0bAMw3iUFs"
+
+//Created 3 different API keys because the 100 use limit
+#define API_KEY @"AIzaSyAYnv8v-1HB1pw012Hdwt-uKf2Taj6ejvU"
+//#define API_KEY @"AIzaSyAR12LCQeHzSN8cfDBSrf7gs0bAMw3iUFs"
 //#define API_KEY @"AIzaSyC0aa24NEwY0WaLQP7cMxJtlB_VJmiVtwc"
-#define number_of_items 30
 
 @implementation TiltNetworkManager
 
@@ -45,7 +46,6 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:successBlock failure:failureBlock];
     [operation start];
-
 }
 
 @end
