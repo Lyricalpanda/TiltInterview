@@ -168,7 +168,7 @@
     ImageCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
     NSArray *imageArray = [self.trendingDict objectForKey:[NSString stringWithFormat:@"%ld",(long)cv.tag]];
     ImageResult *img = [imageArray objectAtIndex:indexPath.row];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:img.thumbnailLink] placeholderImage:nil];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:img.thumbnailLink] placeholderImage:[UIImage new]];
     [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
     return cell;
 }
