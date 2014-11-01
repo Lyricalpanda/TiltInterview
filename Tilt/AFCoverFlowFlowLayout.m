@@ -11,10 +11,7 @@
 
 /*
  
- All of the math for the cover flow layout was take from
- https://github.com/mpospese/IntroducingCollectionViews ,
- used with permission of the autor, Mark Pospesel, to whom
- I'm grateful for contributing to the open source community.
+ This is taken from Ash Furrow's UICollectionView tutorial samples
  
  */
 

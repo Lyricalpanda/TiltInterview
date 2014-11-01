@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Eric Harmon. All rights reserved.
 //
 
+//This is taken from Ash Furrow's UICollectionView tutorial samples
+
+
 #import "AFCollectionViewLayoutAttributes.h"
 
 @implementation AFCollectionViewLayoutAttributes

@@ -48,12 +48,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.timerIndex = 0;
-    self.viewTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(onTick:) userInfo:nil repeats:YES];
-    
     
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
-    self.trendingDict = [NSMutableDictionary new];
     
     [self.trendingView1 setTag:1];
     [self.trendingView2 setTag:2];
@@ -63,16 +59,11 @@
 
 - (void) initializeCollectionView:(UICollectionView *)collectionView
 {
-    //Initialize FlowLayout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     [layout setItemSize:CGSizeMake(collectionView.frame.size.height - 4, collectionView.frame.size.height - 4)];
     [layout setMinimumLineSpacing:10];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
 
-//    if (collectionView.tag == 1)
-//    {
-//    [collectionView = [UICollectionView alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>) collectionViewLayout:layout];
-//    }
     [collectionView setCollectionViewLayout:layout];
     collectionView.opaque = NO;
     collectionView.backgroundColor = [UIColor clearColor];
@@ -82,18 +73,26 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void) viewDidLayoutSubviews
+- (void) viewWillDisappear:(BOOL)animated
 {
-    
+    [super viewWillDisappear:animated];
+    [self.viewTimer invalidate];
+    self.viewTimer = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.trendingDict = [NSMutableDictionary new];
+    self.timerIndex = 0;
+    self.trendingLabel1.text = @"Loading...";
+    self.trendingLabel2.text = @"Loading...";
     [self.trendingDict removeAllObjects];
     [self.trendingView1 reloadData];
     [self.trendingView2 reloadData];
     
+    self.viewTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(onTick:) userInfo:nil repeats:YES];
+
     [TiltNetworkManager searchHotTrendsWithSuccessBlock:^(AFHTTPRequestOperation *task, id responseObject) {
         NSMutableArray *usaDict = [[(NSDictionary *)responseObject objectForKey:@"1"] mutableCopy];
         int count = (int)[usaDict count] - 1;

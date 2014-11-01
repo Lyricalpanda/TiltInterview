@@ -12,6 +12,10 @@
 #import "ImageResult.h"
 #import "ImageCollectionViewCell.h"
 
+/*
+ This uses Ash Furrow's UICollectionView coverflow sample. This is used to show UI/UX thinking instead of ability to come up with my own custom coverflow!
+ */
+
 @interface SavedViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UICollectionView *collectionView;
@@ -25,7 +29,6 @@
     [super viewDidLoad];
     self.imagesArray = [NSMutableArray new];
     [self.collectionView setCollectionViewLayout:[AFCoverFlowFlowLayout new]];
-    // Do any additional setup after loading the view.
 }
 
 - (void) viewWillAppear:(BOOL)animated
