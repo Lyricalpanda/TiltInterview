@@ -8,10 +8,10 @@
 
 #import "SearchViewController.h"
 
-#import "TiltNetworkManager.h"
-#import "ImageResult.h"
-
 #import "ImageCollectionViewCell.h"
+
+#import "ImageResult.h"
+#import "TiltNetworkManager.h"
 #import "UIImageView+AFNetworking.h"
 
 #define BLUR_VIEW_TAG 1
@@ -25,6 +25,7 @@
 @interface SearchViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, retain) UIView *fullImageView;
 @property (nonatomic, retain) UIView *queryBlurView;
@@ -44,7 +45,6 @@
 @property (nonatomic) int cellWidth;
 @property (nonatomic) int cellHeight;
 
-@property (nonatomic, retain) IBOutlet UICollectionView *collectionView;
 
 
 @end
